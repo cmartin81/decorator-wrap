@@ -4,7 +4,7 @@
   "description": "A decorator (@wrap) for wrapping class or methods with your custom code",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --compilers js:test/testSettings"
   },
   "repository": {
     "type": "git",

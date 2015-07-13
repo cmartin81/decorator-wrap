@@ -1,17 +1,11 @@
-require("babel/register")({
-  optional: ["es7.decorators"]
-});
-
 
 var assert = require("assert");
 var wrap = require('../dist').wrap;
 var _ = require('lodash');
 
-let testClass = null;
-
 describe('Wrap', function() {
   it('should wrap a class', function (done) {
-    let log = (callback, args, name, type) => {
+    var log = (callback, args, name, type) => {
       console.log('Starting  ', type, name);
       var result = callback();
       console.log('Ended: ', name);
@@ -37,7 +31,7 @@ describe('Wrap', function() {
   });
 
   it('should wrap a method inside a class', function (done) {
-    let log = (callback, args, name, type) => {
+    var log = (callback, args, name, type) => {
       console.log('Starting  ', type, name);
       var result = callback();
       console.log('Ended: ', name);
