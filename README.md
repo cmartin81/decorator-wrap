@@ -14,16 +14,24 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
     $ npm install --save decorator-wrap
  
 ## Usage
+Make a function that have 4 parameters:
+paremeter | description
+--- | --- 
+callback | The actual method/class. ** remeber to invoke it and return the value **
+args | The arguments passed into the method/class
+name | The method name of the method/class that is invoked
+type| The object type where the decorator is placed (class or function)
+
     // ES2016 style
     import {wrap} from 'decorator-wrap'
 
     // CommonJS style
     let wrap = require('decorator-wrap').wrap;
     
-    var log = (methodCallback, methodArgs, methodName, type) => {
-      console.log('Starting  ', type, methodName);
-      var result = methodCallback();
-      console.log('Ended: ', methodName);
+    var log = (callback, args, name, type) => {
+      console.log('Starting  ', type, name);
+      var result = callback();
+      console.log('Ended: ', name);
       return result;
     };
 

@@ -1,5 +1,4 @@
-//export function wrap(wrapperMethod) {
-function wrap(wrapperMethod) {
+export function wrap(wrapperMethod) {
   return (target, key, descriptor) => {
 
     if ( typeof(target) === 'function' ){
@@ -24,26 +23,3 @@ function wrap(wrapperMethod) {
     }
   }
 }
-
-var log = (methodCallback, methodArgs, methodName, type) => {
-  console.log('Starting  ', type, methodName);
-  var result = methodCallback();
-  console.log('Ended: ', methodName);
-  return result;
-};
-
-
-@wrap(log)
-class Testing{
-  constructor(startNumber = 1){
-    this.a = startNumber;
-  }
-  @wrap(log)
-  add(number){
-    this.a += number;
-  }
-}
-
-var testing = new Testing(3);
-console.log(testing.add(10));
-console.log(testing.a);

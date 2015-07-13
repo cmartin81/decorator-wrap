@@ -1,9 +1,9 @@
-//export function wrap(wrapperMethod) {
 'use strict';
 
-var _createDecoratedClass = (function () { function defineProperties(target, descriptors, initializers) { for (var i = 0; i < descriptors.length; i++) { var descriptor = descriptors[i]; var decorators = descriptor.decorators; var key = descriptor.key; delete descriptor.key; delete descriptor.decorators; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor || descriptor.initializer) descriptor.writable = true; if (decorators) { for (var f = 0; f < decorators.length; f++) { var decorator = decorators[f]; if (typeof decorator === 'function') { descriptor = decorator(target, key, descriptor) || descriptor; } else { throw new TypeError('The decorator for method ' + descriptor.key + ' is of the invalid type ' + typeof decorator); } } if (descriptor.initializer !== undefined) { initializers[key] = descriptor; continue; } } Object.defineProperty(target, key, descriptor); } } return function (Constructor, protoProps, staticProps, protoInitializers, staticInitializers) { if (protoProps) defineProperties(Constructor.prototype, protoProps, protoInitializers); if (staticProps) defineProperties(Constructor, staticProps, staticInitializers); return Constructor; }; })();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports.wrap = wrap;
 
 function wrap(wrapperMethod) {
   return function (target, key, descriptor) {
@@ -48,42 +48,3 @@ function wrap(wrapperMethod) {
     }
   };
 }
-
-var log = function log(methodCallback, methodArgs, methodName, type) {
-  console.log('Starting  ', type, methodName);
-  console.log(methodArgs);
-  //methodArgs[0] = 1000;
-  var result = methodCallback();
-  console.log('Ended: ', methodName);
-  return result;
-};
-
-var Testing = (function () {
-  function Testing() {
-    var startNumber = arguments.length <= 0 || arguments[0] === undefined ? 1 : arguments[0];
-
-    _classCallCheck(this, _Testing);
-
-    this.a = 123;
-    console.log('this is a test');
-  }
-
-  _createDecoratedClass(Testing, [{
-    key: 'add',
-    decorators: [wrap(log)],
-    value: function add(number) {
-      this.a += number;
-      return 'added number ' + number;
-    }
-  }]);
-
-  var _Testing = Testing;
-  Testing = wrap(log)(Testing) || Testing;
-  return Testing;
-})();
-
-//class Testing{constructor(startNumber = 1){this.a = 1;console.log('this is a test');}add(number){this.a += number;}}
-
-var testing = new Testing(3);
-console.log(testing.add(10));
-console.log(testing.a);
