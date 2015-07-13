@@ -1,4 +1,4 @@
-# decorator-surround
+# decorator-wrap
 A ES6 decorator for wrapping classes or methods with you own custom code. You can also edit the parameters!
 
 With it you can easily make:
