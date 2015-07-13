@@ -5,7 +5,7 @@ A ES6 decorator for wrapping classes or methods with you own custom code. You ca
 
 With it you can easily make:
 * logger functions
-* edit the inputparameters to a method
+* edit the input parameters to a method
 * edit the output from a method
 * do something extra with the result (ie write to file)
 * skip calling the method

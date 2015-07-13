@@ -1,7 +1,6 @@
 
 var assert = require("assert");
 var wrap = require('../dist').wrap;
-var _ = require('lodash');
 
 describe('Wrap', function() {
   it('should wrap a class', function (done) {
@@ -9,7 +8,7 @@ describe('Wrap', function() {
       console.log('Starting  ', type, name);
       var result = callback();
       console.log('Ended: ', name);
-      done()
+      done();
       return result;
     };
 
@@ -35,7 +34,7 @@ describe('Wrap', function() {
       console.log('Starting  ', type, name);
       var result = callback();
       console.log('Ended: ', name);
-      done()
+      done();
       return result;
     };
 
