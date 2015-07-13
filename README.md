@@ -16,14 +16,14 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
 ## Usage
 Make a function that have 4 parameters:
 
-    | parameters | description                                                              |
-    |------------|--------------------------------------------------------------------------| 
-    | callback   | The actual method/class. ** remeber to invoke it and return the value ** |
-    | args       | The arguments passed into the method/class                               |
-    | name       | The method name of the method/class that is invoked                      |
-    | type       | The object type where the decorator is placed (class or function)        |
+    | parameters | description                                                                 |
+    |------------|-----------------------------------------------------------------------------| 
+    | callback   | The actual method/class. REMEBER TO INVOKE THIS METHOD AND RETURN THE VALUE |
+    | args       | The arguments passed into the method/class                                  |
+    | name       | The method name of the method/class that is invoked                         |
+    | type       | The object type where the decorator is placed (class or function)           |
 
-Here is an example:
+### Here is an example:
 
     // ES2016 style
     import {wrap} from 'decorator-wrap'
@@ -42,14 +42,25 @@ Here is an example:
     class SuperNiceClass {
         constructor(){
             //some business here.... 
+            console.log('hello from class');
             //some business here.... 
         }
         @wrap(log)
         bar(a,b) {
             //some business here.... 
+            console.log('hello from bar method');
+            //some business here.... 
         }
     }
     
+### Result
+    Starting class SuperNiceClass
+    hello from class
+    Ended: SuperNiceClass
+    Starting function bar
+    hello from bar method
+    Ended: bar
+
 
 ## Note
 You need to run babel with the option 'es7.decorators' enabled.
