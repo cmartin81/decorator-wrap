@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cmartin81/decorator-wrap.svg)](https://travis-ci.org/cmartin81/decorator-wrap)
+
 # decorator-wrap
 A ES6 decorator for wrapping classes or methods with you own custom code. You can also edit the parameters!
 

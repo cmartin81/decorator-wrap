@@ -13,6 +13,5 @@ gulp.task('default', function () {
 
 gulp.task('test', function() {
   return gulp.src('test/**/*.js')
-    .pipe(babel({optional: ['es7.decorators']}))
-    .pipe(mocha({reporter: 'nyan'}))
+    .pipe(mocha({reporter: 'nyan', compilers: 'js:babel/register'}))
 });
