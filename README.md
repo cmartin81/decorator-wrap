@@ -15,12 +15,15 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
  
 ## Usage
 Make a function that have 4 parameters:
-paremeter | description
---- | --- 
-callback | The actual method/class. ** remeber to invoke it and return the value **
-args | The arguments passed into the method/class
-name | The method name of the method/class that is invoked
-type| The object type where the decorator is placed (class or function)
+
+    | parameters | description                                                              |
+    |------------|--------------------------------------------------------------------------| 
+    | callback   | The actual method/class. ** remeber to invoke it and return the value ** |
+    | args       | The arguments passed into the method/class                               |
+    | name       | The method name of the method/class that is invoked                      |
+    | type       | The object type where the decorator is placed (class or function)        |
+
+Here is an example:
 
     // ES2016 style
     import {wrap} from 'decorator-wrap'
@@ -50,3 +53,6 @@ type| The object type where the decorator is placed (class or function)
 
 ## Note
 You need to run babel with the option 'es7.decorators' enabled.
+
+## License
+MIT © Christian Martin
