@@ -1,32 +1,41 @@
 # decorator-surround
-A angular decorator for angular dependency injection.
+A ES6 decorator for wrapping classes or methods with you own custom code. You can also edit the parameters!
+
+With it you can easily make:
+* logger functions
+* edit the input to a method
+* edit the output to a method
+* do something extra with the result (ie write to file)
+
+Should also work in frontend code if you use babel with es7.decorators enabled.
+
 
 ## Install
-    $ npm install --save decorator-surround
+    $ npm install --save decorator-wrap
  
 ## Usage
     // ES2016 style
-    import {surround} from 'decorator-surround'
+    import {wrap} from 'decorator-wrap'
 
     // CommonJS style
-    let surround = require('decorator-surround').surround;
-
-    @surround( function(methodCallback, methodArgs, methodName) {
-        console.log(arguments)
-        var result = callback(methodArgs)
-        console.log(blabla);
-        return(result);
-    })
+    let wrap = require('decorator-wrap').wrap;
     
-    class FooBarController {
+    var log = (methodCallback, methodArgs, methodName, type) => {
+      console.log('Starting  ', type, methodName);
+      var result = methodCallback();
+      console.log('Ended: ', methodName);
+      return result;
+    };
+
+    @wrap(log)
+    class SuperNiceClass {
         constructor(){
-            ....
-            ....
-            ....
+            //some business here.... 
+            //some business here.... 
         }
-        
-        bar() {
-            this.$base64.encode('babba');
+        @wrap(log)
+        bar(a,b) {
+            //some business here.... 
         }
     }
     

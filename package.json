@@ -1,28 +1,29 @@
 {
-  "name": "decorator-surround",
+  "name": "decorator-wrap",
   "version": "0.1.0",
-  "description": "A decorator (@surround) for wrapping all/some of your methods inside custom code",
+  "description": "A decorator (@wrap) for wrapping class or methods with your custom code",
   "main": "dist/index.js",
   "scripts": {
     "test": "node node_modules/gulp/bin/gulp.js test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmartin81/decorator-surround.git"
+    "url": "https://github.com/cmartin81/decorator-wrap.git"
   },
   "keywords": [
     "ES2016",
     "ES7",
     "decorator",
+    "wrap",
     "surround",
-    "@surround"
+    "@wrap"
   ],
   "author": "Christian Martin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cmartin81/decorator-surround/issues"
+    "url": "https://github.com/cmartin81/decorator-wrap/issues"
   },
-  "homepage": "https://github.com/cmartin81/decorator-surround",
+  "homepage": "https://github.com/cmartin81/decorator-wrap",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
