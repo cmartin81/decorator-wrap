@@ -53,6 +53,8 @@ Make a function that have 4 parameters:
         }
     }
     
+    new SuperNiceClass().bar(1,2);
+    
 ### Result
     Starting class SuperNiceClass
     hello from class
