@@ -5,9 +5,12 @@ A ES6 decorator for wrapping classes or methods with you own custom code. You ca
 
 With it you can easily make:
 * logger functions
-* edit the input to a method
-* edit the output to a method
+* edit the inputparameters to a method
+* edit the output from a method
 * do something extra with the result (ie write to file)
+* skip calling the method
+
+Please see tests for more examples
 
 Should also work in frontend code if you use babel with es7.decorators enabled.
 
@@ -16,7 +19,7 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
     $ npm install --save decorator-wrap
  
 ## Usage
-Make a function that have 4 parameters:
+### Make a function that have 4 parameters:
 
     | parameters | description                                                                 |
     |------------|-----------------------------------------------------------------------------| 
@@ -65,6 +68,8 @@ Make a function that have 4 parameters:
     hello from bar method
     Ended: bar
 
+
+## For more examples see test/wrap.test.js 
 
 ## Note
 You need to run babel with the option 'es7.decorators' enabled.
