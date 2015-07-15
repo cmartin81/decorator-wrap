@@ -72,12 +72,13 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
 
 ## Plugins
 You can easily make plugins to this module by simply doing this
+
     export function log(target, key, descriptor) {
-      return wrap(log)(target, key, descriptor);  //see the method in the example above
+        return wrap(log)(target, key, descriptor);  //see the method in the example above
     }
 
 ## Available plugins
-[decorator-promise](https://www.npmjs.com/package/decorator-promise)
+[decorator-promise](https://www.npmjs.com/package/decorator-promise) - Transforms your classmethods to promises
 
 ## Note
 You need to run babel with the option 'es7.decorators' enabled.
