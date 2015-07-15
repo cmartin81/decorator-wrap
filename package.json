@@ -1,6 +1,6 @@
 {
   "name": "decorator-wrap",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A decorator (@wrap) for wrapping class or methods with your custom code",
   "main": "dist/index.js",
   "scripts": {
