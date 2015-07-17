@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/cmartin81/decorator-wrap.svg)](https://travis-ci.org/cmartin81/decorator-wrap)
 
 # decorator-wrap
-A ES6 decorator for wrapping classes or methods with you own custom code. You can also edit the parameters!
+A ES6 decorator for wrapping classes or class methods with you own custom code. You can also edit the parameters!
 
 With it you can easily make:
 * logger functions
@@ -9,6 +9,7 @@ With it you can easily make:
 * edit the output from a method
 * do something extra with the result (ie write to file)
 * skip calling the method
+* do what you want...
 
 Please see tests for more examples
 
@@ -23,7 +24,7 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
     | parameters | description                                                                 |
     |------------|-----------------------------------------------------------------------------| 
     | callback   | The actual method/class. REMEBER TO INVOKE THIS METHOD AND RETURN THE VALUE |
-    | args       | The arguments passed into the method/class                                  |
+    | args       | The arguments passed into the original method/class                                  |
     | name       | The method name of the method/class that is invoked                         |
     | type       | The object type where the decorator is placed (class or function)           |
 
@@ -73,8 +74,36 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
 ## Plugins
 You can easily make plugins to this module by simply doing this
 
-    export function log(target, key, descriptor) {
-        return wrap(log)(target, key, descriptor);  //see the method in the example above
+### log.js
+    // ------------ log.js -------------
+    var wrap = require('decorator-wrap').wrap;
+
+    var log = function (callback, args, name, type){
+      console.log('Starting  ', type, name);
+      var result = callback();
+      console.log('Ended: ', name);
+      return result;
+    };
+
+    module.exports = function(target, key, descriptor) {
+        return wrap(log)(target, key, descriptor);
+    }
+
+### FooBar.js
+    // ------------- FooBar.js ------------
+    var require('./log');
+
+    @log
+    class FooBar{
+        @log
+        foo() {
+            //some business here....
+        }
+
+        @log
+        bar(){
+            //some business here....
+        }
     }
 
 ## Available plugins
