@@ -107,8 +107,8 @@ You can easily make plugins to this module by simply doing this
     }
 
 # Available plugins
-[decorator-promise](https://www.npmjs.com/package/decorator-promise) - Transforms your classmethods to promises
-[decorator-performance](https://www.npmjs.com/package/decorator-performance) - A ES6 decorator for logging out performance.
+* [decorator-promise](https://www.npmjs.com/package/decorator-promise) - Transforms your classmethods to promises
+* [decorator-performance](https://www.npmjs.com/package/decorator-performance) - A ES6 decorator for logging out performance.
 
 
 # Note
