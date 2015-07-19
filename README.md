@@ -71,7 +71,7 @@ Should also work in frontend code if you use babel with es7.decorators enabled.
 
 ## For more examples see test/wrap.test.js 
 
-## Plugins
+# Plugins
 You can easily make plugins to this module by simply doing this
 
 ### log.js
@@ -106,11 +106,13 @@ You can easily make plugins to this module by simply doing this
         }
     }
 
-## Available plugins
+# Available plugins
 [decorator-promise](https://www.npmjs.com/package/decorator-promise) - Transforms your classmethods to promises
+[decorator-performance](https://www.npmjs.com/package/decorator-performance) - A ES6 decorator for logging out performance.
 
-## Note
+
+# Note
 You need to run babel with the option 'es7.decorators' enabled.
 
-## License
+# License
 MIT © Christian Martin
