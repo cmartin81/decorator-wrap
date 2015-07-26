@@ -1,6 +1,6 @@
 
 var assert = require("assert");
-var wrap = require('../dist').wrap;
+var wrap = require('../dist/index.min.js').wrap;
 
 describe('Wrap', function() {
   it('should wrap a class', function (done) {
